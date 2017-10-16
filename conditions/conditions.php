@@ -33,6 +33,7 @@ interface ConditionInterface
 {
     public function init(array $conditionsBag);
     public function getAwardBadge();
+    public function checkConditionsBag(array $conditionsBag);
 }
 
 class RegistrationCondition extends Condition implements ConditionInterface
@@ -61,7 +62,7 @@ class RegistrationCondition extends Condition implements ConditionInterface
         return $badge;
     }
 
-    private function checkConditionsBag(array $conditionsBag)
+    public function checkConditionsBag(array $conditionsBag)
     {
         // Here we can do complext logic and include more methods to split complexity
         foreach ($conditionsBag as $conditionName => $conditionValue) {
